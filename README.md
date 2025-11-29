@@ -1,9 +1,9 @@
 🚨 The Scenario
 
-☑️Victim: CEO of TechNova Inc.
-☑️Date: October 15, 2025
-☑️Time: 9:00 PM (21:00)
-☑️Mission: Identify the killer, the location, the time, and the method of the crime.
+#☑️Victim: CEO of TechNova Inc.
+#☑️Date: October 15, 2025
+#☑️Time: 9:00 PM (21:00)
+#☑️Mission: Identify the killer, the location, the time, and the method of the crime.
 
 📂 Database Schema
 
