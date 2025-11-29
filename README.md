@@ -1,161 +1,38 @@
-🕵️‍♂️ SQL Murder Mystery — TechNova Inc. Investigation
+🚨 The Scenario
 
-Solve a murder. Catch a killer.
-Using nothing but SQL.
+☑️Victim: CEO of TechNova Inc.
+☑️Date: October 15, 2025
+☑️Time: 9:00 PM (21:00)
+☑️Mission: Identify the killer, the location, the time, and the method of the crime.
 
-This project is an end-to-end data investigation challenge where you analyze keycard logs, alibis, phone records, and evidence to uncover:
+📂 Database Schema
 
-Who killed the CEO of TechNova Inc.?
+The analysis was performed using a relational database containing the following tables:
 
-Where and when did the murder occur?
+employees: Personnel details of all staff members.
+keycard_logs: Timestamps of when employees entered and exited specific rooms.
+calls: Phone call records (Caller ID, Receiver ID, Duration).
+alibis: Statements provided by employees regarding their whereabouts.
+evidence: Physical evidence found in different rooms (linked to time and location).
 
-How did the killer do it?
+The goal was to think like a detective using SQL logic:
 
-⚡ Overview
+Timeline Reconstruction: Identify where and when the crime happened.
+Access Control: Analyze who accessed critical areas (CEO's Office) near the time of death.
+Alibi Verification: Cross-check employee alibis against actual keycard logs to find discrepancies.
+Communication Analysis: Investigate suspicious calls made around 20:50 - 21:00.
+Evidence Matching: Correlate physical evidence with suspect movements.
 
-On October 15, 2025, at 9:00 PM, the CEO of TechNova Inc. is found dead in their office.
-As the lead data analyst, your mission is to interrogate the company’s internal databases to solve the case.
+🧠 Key Analysis Steps (Guiding Questions)
 
-This repository contains:
+To solve the case, I executed complex SQL queries to answer the following:
 
-SQL scripts to recreate the database
+Who entered the CEO's Office close to the time of the murder?
+Who claimed to be somewhere else but their keycard logs prove otherwise?
+Who made or received calls between 20:50 and 21:00?
+What evidence (e.g., fingerprints, emails) was found at the crime scene?
+Which suspect has a mismatch in movements, alibi, and call activity?
 
-Investigation queries for each step
+🛠 Technologies Used
 
-A final conclusion query revealing the murderer
-
-📂 Dataset
-
-Run the provided SQL file to generate all required tables and data:
-
-SQL_Murder_Mystery.sql
-
-
-The database includes:
-
-1. employees
-
-Contains employee details (name, role, department)
-
-2. keycard_logs
-
-Records employee movements across rooms
-
-3. calls
-
-Logs internal phone calls with timestamps and durations
-
-4. alibis
-
-What employees claimed versus where they actually were
-
-5. evidence
-
-Physical clues found in various rooms
-
-🧠 Investigation Flow
-
-Your SQL queries walk through the full detective workflow:
-
-✔ Step 1 — Identify the Crime Scene & Time
-
-Determine where and when the murder occurred.
-
-✔ Step 2 — Track Room Access
-
-Find who entered the CEO’s office shortly before the murder.
-
-✔ Step 3 — Verify Alibis
-
-Compare claimed locations against real keycard movements.
-
-✔ Step 4 — Analyze Suspicious Calls
-
-Review calls made around 20:50–21:00.
-
-✔ Step 5 — Match Evidence to Suspects
-
-Look for inconsistencies between evidence and employee activity.
-
-✔ Step 6 — Final Cross-Analysis
-
-Combine all clues to identify the killer with a single SQL query.
-
-🧾 Deliverables in This Repository
-
-SQL_Murder_Mystery.sql — full dataset (tables + inserts)
-
-investigation_steps.sql — queries for each investigation
-
-final_solution.sql — query that reveals the murderer
-
-README.md — (this file)
-
-🏁 Final Output Format
-
-The final query returns exactly this structure:
-
-killer
-Full Name of Killer
-🧩 Skills Practiced
-
-This challenge strengthens your SQL detective toolkit:
-
-Complex filtering with WHERE, BETWEEN
-
-Multi-table JOINs
-
-Subqueries & CTEs for layered logic
-
-Time-based analysis
-
-Pattern recognition & analytical reasoning
-
-🛠 Tech Stack
-
-PostgreSQL / MySQL
-
-SQL (CTEs, joins, filters)
-
-PgAdmin / MySQL Workbench
-
-🎯 Purpose of the Project
-
-This project was created to:
-
-Practice real-world SQL investigation logic
-
-Improve data-driven problem solving
-
-Demonstrate SQL mastery in an interactive, fun format
-
-Build a strong GitHub portfolio project
-
-🚀 How to Run
-
-Clone the repository:
-
-git clone https://github.com/yourusername/sql-murder-mystery.git
-
-
-Import the SQL file into your local database
-
-Run the investigation queries step-by-step
-
-Catch the killer 🔪
-
-🏆 Result
-
-By following all the steps, you’ll uncover:
-
-Who committed the murder
-
-Where it happened
-
-When it happened
-
-How they were caught through SQL analysis
-
-📜 License
-
-This project is licensed under the MIT License.
+SQL (PostgreSQL)
