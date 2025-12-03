@@ -1,38 +1,60 @@
-🚨 The Scenario
+# 🕵️‍♂️ SQL Murder Mystery: "Who Killed the CEO?"
 
-☑️Victim: CEO of TechNova Inc.
-☑️Date: October 15, 2025
-☑️Time: 9:00 PM (21:00)
-☑️Mission: Identify the killer, the location, the time, and the method of the crime.
+![SQL](https://img.shields.io/badge/Language-SQL-orange) ![Status](https://img.shields.io/badge/Status-Completed-brightgreen) ![Challenge](https://img.shields.io/badge/Challenge-21DaysSQLChallenge-blue)
 
-📂 Database Schema
+## 📋 Project Overview
+This project is the **Capstone Case Study** for the **21 Days SQL Challenge**. I took on the role of a Lead Data Analyst to solve a fictional crime using only raw database data and SQL queries.
 
-The analysis was performed using a relational database containing the following tables:
+**The Case:**
+The CEO of **TechNova Inc.** was found dead in their office on **October 15, 2023, at 9:00 PM**. My mission was to identify the killer, determine the location and time of the crime, and explain how it happened.
 
-employees: Personnel details of all staff members.
-keycard_logs: Timestamps of when employees entered and exited specific rooms.
-calls: Phone call records (Caller ID, Receiver ID, Duration).
-alibis: Statements provided by employees regarding their whereabouts.
-evidence: Physical evidence found in different rooms (linked to time and location).
+## 📂 Database Schema & Dataset
+The investigation relied on 5 key tables provided in the `SQL Murder Mystery.sql` file:
 
-The goal was to think like a detective using SQL logic:
+* **`employees`**: Employee details (ID, name, department, role).
+* **`keycard_logs`**: Entry and exit logs for various rooms (log_id, time, room name).
+* **`calls`**: Phone call records including caller, receiver, and duration.
+* **`alibis`**: Statements from employees on where they claimed to be.
+* **`evidence`**: Forensic evidence found in different rooms (description, time found).
 
-Timeline Reconstruction: Identify where and when the crime happened.
-Access Control: Analyze who accessed critical areas (CEO's Office) near the time of death.
-Alibi Verification: Cross-check employee alibis against actual keycard logs to find discrepancies.
-Communication Analysis: Investigate suspicious calls made around 20:50 - 21:00.
-Evidence Matching: Correlate physical evidence with suspect movements.
+## 🔍 Investigation Process
+I followed a structured data analysis approach to narrow down the suspects:
 
-🧠 Key Analysis Steps (Guiding Questions)
+### **1. Establishing the Timeline & Scene**
+* Filtered the **`evidence`** table to identify items found near the crime scene around the time of death (Oct 15, 2023).
+* Used `WHERE` clauses to pinpoint the exact location of the crime inside the office.
 
-To solve the case, I executed complex SQL queries to answer the following:
+### **2. Analyzing Movement (Access Logs)**
+* Joined **`employees`** with **`keycard_logs`** to see who entered the CEO's office close to the time of the murder.
+* Used `BETWEEN` operators to filter logs for the critical time window (20:50 - 21:00).
 
-Who entered the CEO's Office close to the time of the murder?
-Who claimed to be somewhere else but their keycard logs prove otherwise?
-Who made or received calls between 20:50 and 21:00?
-What evidence (e.g., fingerprints, emails) was found at the crime scene?
-Which suspect has a mismatch in movements, alibi, and call activity?
+### **3. Verifying Alibis & Motives**
+* Cross-referenced **`alibis`** with **`keycard_logs`** to identify employees who lied about their location.
+* Investigated **`calls`** to see if any suspicious communications occurred before or after the crime.
+* Combined findings using `INTERSECT` and multiple `JOIN`s to single out the true culprit.
 
-🛠 Technologies Used
+## 🛠️ Tech Stack
+* **Database:** PostgreSQL / MySQL
+* **SQL Concepts Applied:**
+    * **Filtering:** `WHERE`, `BETWEEN`, `AND`/`OR`
+    * **Joins:** `INNER JOIN`, `LEFT JOIN` (connecting suspects to logs)
+    * **Set Operations:** `INTERSECT`
+    * **Subqueries:** To filter lists of suspects dynamically
+    * **Pattern Matching:** `LIKE` operator
 
-SQL (PostgreSQL)
+## 🚀 How to Run
+1.  Clone this repository:
+    ```bash
+    git clone [https://github.com/](https://github.com/)[jhimaja]/capstone-project.git
+    ```
+2.  Import the database schema:
+    * Run the file `SQL Murder Mystery.sql` in your SQL tool (pgAdmin / MySQL Workbench).
+3.  View the solution:
+    * Open `solution_queries.sql` to see the step-by-step investigation.
+
+## 🏆 Acknowledgments
+Special thanks to the **21 Days SQL Challenge** community for this engaging capstone project.
+
+---
+* Created by [J Himaja]
+* Connect with me on [https://www.linkedin.com/in/himajaj/]
