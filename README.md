@@ -50,10 +50,10 @@ I followed a structured data analysis approach to narrow down the suspects:
 2.  Import the database schema:
     * Run the file `SQL Murder Mystery.sql` in your SQL tool (pgAdmin / MySQL Workbench).
 3.  View the solution:
-    * Open `solution_queries.sql` to see the step-by-step investigation.
+    * Open `capstone_project.sql` to see the step-by-step investigation.
 
 ## 🏆 Acknowledgments
-Special thanks to the **21 Days SQL Challenge** community for this engaging capstone project.
+Special thanks to the **21DaysSQLChallenge** by [https://www.indiandataclub.com/] for this engaging capstone project.
 
 ---
 * Created by [J Himaja]
